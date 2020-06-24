@@ -16,7 +16,7 @@ gap: 15px;
 
 .item {
   background-color: rgb(240,0,200);
-  height: 120px;
+  height: 80px;
 }
 .Image1 {
   grid-column: 1/3;
