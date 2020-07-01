@@ -10,47 +10,52 @@
   <body>
     <h1>moritz riedl</h1>
     <div class="pictureFeed">
-      <section class="gallery"></section>
+      <section class="gallery">
+        <div class="galleryImage item1">
+          <img src="src/images/1.jpg" class="image" />
+        </div>
+        <div class="galleryImage item2">
+          <img src="src/images/2.jpg" class="image" />
+        </div>
+        <div class="galleryImage item3">
+          <img src="src/images/3.jpg" class="image" />
+        </div>
+        <div class="galleryImage item4">
+          <img src="src/images/4.jpg" class="image" />
+        </div>
+        <div class="galleryImage item5">
+          <img src="src/images/5.jpg" class="image" />
+        </div>
+        <div class="galleryImage item6">
+          <img src="src/images/6.jpg" class="image" />
+        </div>
+        <div class="galleryImage item7">
+          <img src="src/images/7.jpg" class="image" />
+        </div>
+        <div class="galleryImage item8">
+          <img src="src/images/8.jpg" class="image" />
+        </div>
+        <div class="galleryImage item9">
+          <img src="src/images/9.jpg" class="image" />
+        </div>
+        <div class="galleryImage item10">
+          <img src="src/images/10.jpg" class="image" />
+        </div>
+        <div class="galleryImage item11">
+          <img src="src/images/11.jpg" class="image" />
+        </div>
+        <div class="galleryImage item12">
+          <img src="src/images/12.jpg" class="image" />
+        </div>
+        <div class="galleryImage item13">
+          <img src="src/images/13.jpg" class="image" />
+        </div>
+        <div class="galleryImage item14">
+          <img src="src/images/14.jpg" class="image" />
+        </div>
+      </section>
     </div>
 
-    <script>
-      const gallery = document.querySelector(".gallery");
-
-      //function to generate html that passes in heights to make each of the pictures
-      function generateHTML([w, h]) {
-        return `
-          <div class="item w${w} h${h}">
-          <img src="src/images/${randomPicNumber(15)}.jpg" class="image">
-          </div>
-        `;
-      }
-
-      // console.log(array[Math.floor(Math.random() * array.length)]);
-      //function to generate random number for pictures
-      // function randomPicNumber() {
-      //   const numberOfPics = 16;
-      //   const array = Array.from({ length: numberOfPics }, (v, k) => k + 1);
-      //   const picSelector = array[Math.floor(Math.random() * array.length)];
-      //   console.log(picSelector);
-      //   return picSelector;
-      // }
-      function randomPicNumber(limit) {
-        return Math.floor(Math.random() * limit) + 1;
-      }
-
-      //function to generate randsom numbers for sizing items
-      function randomSpanNumber(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
-      }
-      //function to generate random arrays to set size of items
-      const digits = Array.from({ length: 15 }, () => [
-        randomSpanNumber(2, 4),
-        randomSpanNumber(2, 4),
-      ]);
-      const html = digits.map(generateHTML).join(" ");
-      console.log(html);
-
-      gallery.innerHTML = html;
-    </script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
