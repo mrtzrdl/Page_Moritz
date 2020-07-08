@@ -8,7 +8,18 @@ img {
   width: 100%;
 }
 .logo {width: 400px;
+
 z-index: 10;
 position: -webkit-sticky;
 position: sticky;
 top: 0px;}
+
+.logo_Shadow {width: 500px;
+    z-index: 11;
+    position: absolute;
+    top: 0px;
+
+}
+.logo_outline {width: 400px;
+
+z-index: 10;}
