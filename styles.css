@@ -70,7 +70,7 @@ body {
   grid-row: 3 / 5;
 }
 .item7 {
-  grid-column: 7 / 11;
+  grid-column: 7 / 13;
   grid-row: 5 / 8;
 }
 .item8 {
@@ -92,8 +92,6 @@ body {
 .item12 {
 }
 .item13 {
-  grid-column: 11 /13;
-  grid-row: 5 / 8;
 }
 .item14 {
   grid-column: 10 /13;
