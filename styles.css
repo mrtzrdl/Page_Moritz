@@ -1,14 +1,19 @@
 body {
-
   background-color: lavender;
   cursor: url(src/cursor.png), auto;
-
 }
 img {
   width: 100%;
+  transition: all 0.4s ease-in-out;
 }
-.logo {width: 400px;
-z-index: 10;
-position: -webkit-sticky;
-position: sticky;
-top: 0px;}
+img:hover {
+  transform: scale(1.03);
+}
+
+.logo {
+  width: 400px;
+  z-index: 10;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
