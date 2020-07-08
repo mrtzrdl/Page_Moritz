@@ -1,7 +1,14 @@
 body {
-  margin: 20px;
+
   background-color: lavender;
+  cursor: url(src/cursor.png), auto;
+
 }
 img {
   width: 100%;
 }
+.logo {width: 400px;
+z-index: 10;
+position: -webkit-sticky;
+position: sticky;
+top: 0px;}
