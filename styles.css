@@ -18,15 +18,20 @@ img:hover {
 }
 .logo_Shadow {
   width: 500px;
-  z-index: -3;
   position: absolute;
   top: 0px;
 }
+.logo.shadowBehind {
+  z-index: -3;
+}
+
 .logo_outline {
   width: 400px;
   position: absolute;
   z-index: 5;
 }
+
 .container {
+  padding-top: 100px;
   z-index: 2;
 }
