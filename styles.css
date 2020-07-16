@@ -9,30 +9,29 @@ img {
 img:hover {
   transform: scale(1.03);
 }
-
 .logo {
   width: 400px;
   z-index: 10;
   position: -webkit-sticky;
   position: sticky;
+  top: 0;
+}
+.logo_Shadow {
+  width: 500px;
+  position: absolute;
   top: 0px;
 }
-<<<<<<< HEAD
-=======
-.logo {width: 400px;
-
-z-index: 10;
-position: -webkit-sticky;
-position: sticky;
-top: 0px;}
-
-.logo_Shadow {width: 500px;
-    z-index: 11;
-    position: absolute;
-    top: 0px;
-
+.logo.shadowBehind {
+  z-index: -3;
 }
-.logo_outline {width: 400px;
 
-z-index: 10;}
->>>>>>> 492aa00a86d4c14701b6dd5cb1884460cf7d1599
+.logo_outline {
+  width: 400px;
+  position: absolute;
+  z-index: 5;
+}
+
+.container {
+  padding-top: 100px;
+  z-index: 2;
+}
