@@ -12,8 +12,8 @@ img:hover {
 .logo {
   width: 400px;
   z-index: 10;
-  position: -webkit-sticky;
-  position: sticky;
+  /* position: -webkit-sticky; */
+  position: fixed;
   top: 0;
 }
 .logo_Shadow {
@@ -29,6 +29,22 @@ img:hover {
   width: 400px;
   position: absolute;
   z-index: 5;
+}
+
+.navbar {
+  position: fixed;
+  right: 0px;
+  top: 40%;
+  z-index: 50;
+}
+
+ul,
+.navbar {
+  list-style: none;
+  font-size: 28px;
+  font-family: monospace;
+  text-align: right;
+  color: #0000ff;
 }
 
 .container {
