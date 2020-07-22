@@ -1,36 +1,35 @@
-const gallery = document.querySelector(".gallery");
+console.log("it works");
 
-//function to generate html that passes in heights to make each of the pictures
-function generateHTML([w, h]) {
-  return `
-          <div class="item w${w} h${h}">
-          <img src="src/images/${randomPicNumber(15)}.jpg" class="image">
-          </div>
-        `;
+const imageModalSelect = document.querySelectorAll('.card');
+const modalOuter = document.querySelector('.modal-outer');
+const modalInner = document.querySelector('.modal-inner');
+
+// 3. handle card click event function 
+
+const handleCardButtonClick = (event) => {
+  // create variables for event current target and card 
+  const card = event.currentTarget;
+  
+  console.log(card);
+  // grab image src, desc and alt
+  const imgSrc = card.querySelector('img').src;
+  const desc = card.dataset.description;
+  const name = card.querySelector('h4').textContent;
+   //populate the modal with the new info 
+  modalInner.innerHTML = `
+    <img  src="${imgSrc}" alt="${name}"/>
+    <p>${desc}</p>
+    `;
+  modalOuter.classList.add('open');
+  console.log(modalOuter);
 }
 
-// console.log(array[Math.floor(Math.random() * array.length)]);
-//function to generate random number for pictures
-function randomPicNumber() {
-  const numberOfPics = 16;
-  const array = Array.from({ length: numberOfPics }, (v, k) => k + 1);
-  const picSelector = array[Math.floor(Math.random() * array.length)];
-  console.log(picSelector);
-  return picSelector;
+imageModalSelect.forEach(card =>
+  card.addEventListener('click', handleCardButtonClick)
+  );
+console.log(handleCardButtonClick);  
+
+const closeModal = () => {
+  modalOuter.classList.remove('open');
 }
-
-
-//function to generate randsom numbers for sizing items
-function randomSpanNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-//function to generate random arrays to set size of items
-const digits = Array.from({ length: 15 }, () => [
-  randomSpanNumber(2, 5),
-  randomSpanNumber(2, 5),
-]);
-const html = digits.map(generateHTML).join(" ");
-console.log(html);
-
-gallery.innerHTML = html;
 
