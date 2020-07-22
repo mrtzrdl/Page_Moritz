@@ -79,9 +79,8 @@ ul,
 }
 
 .modal-inner {
-  max-width: 50%;
+  max-width: 50vmin;
 
-  background: aliceblue;
   transform: translateY(-200%);
   transition: transform 2s;
 }

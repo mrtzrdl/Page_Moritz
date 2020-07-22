@@ -33,3 +33,16 @@ const closeModal = () => {
   modalOuter.classList.remove('open');
 }
 
+modalOuter.addEventListener('click', event => {
+  const isOutside = !event.target.closest('.modal-inner');
+  if (isOutside) {
+    closeModal();
+  }
+});
+
+window.addEventListener('keydown', event => {
+  console.log(event);
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
