@@ -6,13 +6,12 @@ img {
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
-img:hover {
+.card img:hover {
   transform: scale(1.03);
 }
 .logo {
   width: 400px;
   z-index: 10;
-  /* position: -webkit-sticky; */
   position: fixed;
   top: 0;
 }
@@ -20,9 +19,6 @@ img:hover {
   width: 500px;
   position: absolute;
   top: 0px;
-}
-.logo.shadowBehind {
-  z-index: -3;
 }
 
 .logo_outline {
@@ -38,6 +34,7 @@ img:hover {
   z-index: 50;
 }
 
+/* style /font of navbar menu */
 ul,
 .navbar {
   list-style: none;
@@ -54,6 +51,11 @@ ul,
   z-index: 2;
 }
 
+.card {
+  border: none;
+}
+
+/* style and details of click gallery */
 .modal-outer {
   display: grid;
   background: rgba(0, 0, 225, 0.6);
@@ -81,11 +83,12 @@ ul,
 }
 
 .modal-inner {
-  max-width: 50vmin;
+  max-width: 80vmin;
 
   transition: ease-in-out 5s;
 }
 
 .modal-outer.open .modal-inner {
   transform: translateY(0);
+  transition: none;
 }
