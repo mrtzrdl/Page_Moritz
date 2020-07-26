@@ -56,7 +56,7 @@ ul,
 }
 
 /* style and details of click gallery */
-.modal-outer {
+.click-view-outer {
   display: grid;
   background: rgba(0, 0, 225, 0.6);
   position: fixed;
@@ -72,23 +72,23 @@ ul,
   transition: opacity 0.2s;
 }
 
-.modal-outer img {
+.click-view-outer img {
   margin: auto;
   align-content: center;
 }
 
-.modal-outer.open {
+.click-view-outer.open {
   opacity: 1;
   pointer-events: all;
 }
 
-.modal-inner {
+.click-view-inner {
   max-width: 80vmin;
 
   transition: ease-in-out 5s;
 }
 
-.modal-outer.open .modal-inner {
+.click-view-outer.open .click-view-inner {
   transform: translateY(0);
   transition: none;
 }

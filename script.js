@@ -1,8 +1,8 @@
 console.log("it works");
 // selects elements that we will use for the click Gallery
-const imageModalSelect = document.querySelectorAll('.card');
-const modalOuter = document.querySelector('.modal-outer');
-const modalInner = document.querySelector('.modal-inner');
+const cardItemSelection = document.querySelectorAll('.card');
+const clickViewOuter = document.querySelector('.click-view-outer');
+const clickViewInner = document.querySelector('.click-view-inner');
 
 // handle card click event function 
 const handleCardButtonClick = (event) => {
@@ -19,26 +19,27 @@ const handleCardButtonClick = (event) => {
   //this line adds the alternate description for screen readers or in case the picture does not load
   const name = card.querySelector('h4').textContent;
    //populate the modal with the new info 
-  modalInner.innerHTML = `
+  clickViewInner.innerHTML = `
     <img  src="${imgSrc}" alt="${name}"/>
     `;
-  modalOuter.classList.add('open');
-  console.log(modalOuter);
+  clickViewOuter.classList.add('open');
+  console.log(clickViewOuter.classList.add('open')
+);
 }
 //sets the card to listen for a click by the user
-imageModalSelect.forEach(card =>
+cardItemSelection.forEach(card =>
   card.addEventListener('click', handleCardButtonClick)
   );
 console.log(handleCardButtonClick);  
 
 //function to close click gallery
 const closeModal = () => {
-  modalOuter.classList.remove('open');
+  clickViewOuter.classList.remove('open');
 }
 
 //sets the 'outside area' to listen for a click to close the gallery
-modalOuter.addEventListener('click', event => {
-  const isOutside = !event.target.closest('.modal-inner');
+clickViewOuter.addEventListener('click', event => {
+  const isOutside = !event.target.closest('.click-view-inner');
   if (isOutside) {
     closeModal();
   }
