@@ -22,13 +22,13 @@ img:hover {
   top: 0px;
 }
 .logo.shadowBehind {
-  z-index: -3;
+  z-index: 5;
 }
 
 .logo_outline {
   width: 400px;
   position: absolute;
-  z-index: 5;
+  z-index: 3;
 }
 /* this here places the navbar on the right side  */
 .navbar {
@@ -41,12 +41,12 @@ img:hover {
 ul,
 .navbar {
   list-style: none;
-  font-size: 28px;
+  font-size: 22px;
   font-family: monospace;
   font-style: italic;
   text-align: right;
   color: #0000ff;
-  line-height: 50px;
+  line-height: 28px;
 }
 
 .container {
