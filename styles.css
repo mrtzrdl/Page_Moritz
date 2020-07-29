@@ -6,13 +6,12 @@ img {
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
-img:hover {
+.card img:hover {
   transform: scale(1.03);
 }
 .logo {
   width: 400px;
   z-index: 10;
-  /* position: -webkit-sticky; */
   position: fixed;
   top: 0;
 }
@@ -38,6 +37,7 @@ img:hover {
   z-index: 50;
 }
 
+/* style /font of navbar menu */
 ul,
 .navbar {
   list-style: none;
@@ -91,22 +91,23 @@ ul,
   transition: opacity 0.2s;
 }
 
-.modal-outer img {
+.click-view-outer img {
   margin: auto;
   align-content: center;
 }
 
-.modal-outer.open {
+.click-view-outer.open {
   opacity: 1;
   pointer-events: all;
 }
 
-.modal-inner {
-  max-width: 50vmin;
+.click-view-inner {
+  max-width: 80vmin;
 
   transition: ease-in-out 5s;
 }
 
-.modal-outer.open .modal-inner {
+.click-view-outer.open .click-view-inner {
   transform: translateY(0);
+  transition: none;
 }
