@@ -21,14 +21,14 @@ img:hover {
   position: absolute;
   top: 0px;
 }
-.logo.shadowBehind {
-  z-index: 5;
+.shadowBehind {
+  z-index: 9;
 }
 
 .logo_outline {
   width: 400px;
   position: absolute;
-  z-index: 3;
+  /* z-index: 3; */
 }
 /* this here places the navbar on the right side  */
 .navbar {
@@ -52,6 +52,27 @@ ul,
 .container {
   padding-top: 100px;
   z-index: 2;
+}
+
+.card {
+  border: none;
+  padding-bottom: 30px
+
+}
+.card p {
+  font-family: 'Roboto Mono', monospace;
+  font-style: italic;
+  line-height: 18px;
+  font-size: 13px;
+  color: rgb(0, 0, 255);
+}
+.card h4 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  padding-top: 12px;
+  line-height: 22px;
+  font-size: 18px;
+  color: rgb(0, 0, 255);
 }
 
 .modal-outer {
