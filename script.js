@@ -2,7 +2,10 @@ console.log("it works");
 // selects elements that we will use for the click Gallery
 const cardItemSelection = document.querySelectorAll('.card');
 const clickViewOuter = document.querySelector('.click-view-outer');
+console.log(clickViewOuter);
 const clickViewInner = document.querySelector('.click-view-inner');
+console.log(clickViewInner);
+
 
 // handle card click event function 
 const handleCardButtonClick = (event) => {
@@ -10,7 +13,6 @@ const handleCardButtonClick = (event) => {
   const card = event.currentTarget;
   console.log(card);
   // grab image src, desc and alt
- 
   const imgSrc = card.querySelector('img').src;
 
    // can add a decription in the gallery in the next  line just uncomment below and add <p>${desc}</p> after the img tag below 
@@ -31,7 +33,6 @@ cardItemSelection.forEach(card =>
   card.addEventListener('click', handleCardButtonClick)
   );
 console.log(handleCardButtonClick);  
-
 //function to close click gallery
 const closeModal = () => {
   clickViewOuter.classList.remove('open');
@@ -52,3 +53,7 @@ window.addEventListener('keydown', event => {
     closeModal();
   }
 });
+
+
+
+

@@ -56,18 +56,17 @@ ul,
 
 .card {
   border: none;
-  padding-bottom: 30px
-
+  padding-bottom: 30px;
 }
 .card p {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-style: italic;
   line-height: 18px;
   font-size: 13px;
   color: rgb(0, 0, 255);
 }
 .card h4 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: 700;
   padding-top: 12px;
   line-height: 22px;
@@ -85,7 +84,6 @@ ul,
   left: 0;
   justify-content: center;
   align-items: center;
-
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
@@ -103,7 +101,6 @@ ul,
 
 .click-view-inner {
   max-width: 80vmin;
-
   transition: ease-in-out 5s;
 }
 
