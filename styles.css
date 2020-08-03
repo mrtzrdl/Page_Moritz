@@ -74,7 +74,7 @@ ul,
   color: rgb(0, 0, 255);
 }
 
-.modal-outer {
+.click-view-outer {
   display: grid;
   background: rgba(0, 0, 225, 0.6);
   position: fixed;
@@ -101,6 +101,7 @@ ul,
 
 .click-view-inner {
   max-width: 80vmin;
+  /* max-height: 80vmin; */
   transition: ease-in-out 5s;
 }
 

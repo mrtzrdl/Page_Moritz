@@ -25,8 +25,7 @@ const handleCardButtonClick = (event) => {
     <img  src="${imgSrc}" alt="${name}"/>
     `;
   clickViewOuter.classList.add('open');
-  console.log(clickViewOuter.classList.add('open')
-);
+  console.log(clickViewOuter);
 }
 //sets the card to listen for a click by the user
 cardItemSelection.forEach(card =>
