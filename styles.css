@@ -10,13 +10,12 @@ img {
   transform: scale(1.03);
 }
 .logo {
-  width: 400px;
   z-index: 10;
   position: fixed;
   top: 0;
 }
 .logo_Shadow {
-  width: 500px;
+  width: 70vmin;
   position: absolute;
   top: 0px;
 }
@@ -25,10 +24,20 @@ img {
 }
 
 .logo_outline {
-  width: 400px;
+  width: 55vmin;
   position: absolute;
   /* z-index: 3; */
 }
+
+@media (max-width: 500px) {
+  .logo_Shadow {
+    width: 60vmin;
+  }
+  .logo_outline {
+    width: 50vmin;
+  }
+}
+
 /* this here places the navbar on the right side  */
 .navbar {
   position: fixed;
@@ -100,7 +109,7 @@ ul,
 }
 
 .click-view-inner {
-  max-width: 80vmin;
+  max-width: 65vmin;
   /* max-height: 80vmin; */
   transition: ease-in-out 5s;
 }
@@ -108,4 +117,33 @@ ul,
 .click-view-outer.open .click-view-inner {
   transform: translateY(0);
   transition: none;
+}
+
+/* the following is all relating to the close button  */
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }

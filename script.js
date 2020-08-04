@@ -5,7 +5,8 @@ const clickViewOuter = document.querySelector('.click-view-outer');
 console.log(clickViewOuter);
 const clickViewInner = document.querySelector('.click-view-inner');
 console.log(clickViewInner);
-
+const closeButton = document.querySelector('.close');
+console.log(closeButton);
 
 // handle card click event function 
 const handleCardButtonClick = (event) => {
@@ -22,7 +23,9 @@ const handleCardButtonClick = (event) => {
   const name = card.querySelector('h4').textContent;
    //populate the modal with the new info 
   clickViewInner.innerHTML = `
+    <span class="close" ></span>
     <img  src="${imgSrc}" alt="${name}"/>
+    
     `;
   clickViewOuter.classList.add('open');
   console.log(clickViewOuter);
@@ -32,6 +35,10 @@ cardItemSelection.forEach(card =>
   card.addEventListener('click', handleCardButtonClick)
   );
 console.log(handleCardButtonClick);  
+
+
+
+
 //function to close click gallery
 const closeModal = () => {
   clickViewOuter.classList.remove('open');
@@ -40,10 +47,16 @@ const closeModal = () => {
 //sets the 'outside area' to listen for a click to close the gallery
 clickViewOuter.addEventListener('click', event => {
   const isOutside = !event.target.closest('.click-view-inner');
+  console.log(isOutside);
   if (isOutside) {
     closeModal();
   }
 });
+//sets close button to listen for a click to close the gallery NOT WORKING
+// closeButton.addEventListener('click', function (event) {
+//   closeModal();
+// });
+
 
 //sets the 'outside area' to listen for excape key to close the gallery
 window.addEventListener('keydown', event => {
