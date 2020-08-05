@@ -5,18 +5,18 @@ const cardItemSelection = document.querySelectorAll('.card');
 const clickViewOuter = document.querySelector('.click-view-outer');
 const clickViewInner = document.querySelector('.click-view-inner');
 
-// handle card click event function 
+// handle card click event function
 const handleCardButtonClick = (event) => {
   // create variables for event current target and card 
   const card = event.currentTarget;
   console.log(card);
   // grab image src, desc and alt
   const imgSrc = card.querySelector('img').src;
-  // can add a decription in the gallery in the next  line just uncomment below and add <p>${desc}</p> after the img tag below 
+  // can add a decription in the gallery in the next  line just uncomment below and add <p>${desc}</p> after the img tag below
   // const desc = card.dataset.description;
   //this line adds the alternate description for screen readers or in case the picture does not load
   const name = card.querySelector('h4').textContent;
-   //populate the modal with the new info 
+   //populate the modal with the new info
   clickViewInner.innerHTML = `
     <img  src="${imgSrc}" alt="${name}"/>
     `;
@@ -27,7 +27,7 @@ const handleCardButtonClick = (event) => {
 cardItemSelection.forEach(card =>
   card.addEventListener('click', handleCardButtonClick)
   );
-console.log(handleCardButtonClick);  
+console.log(handleCardButtonClick);
 
 //function to close click gallery
 const closeGallery = () => {
@@ -49,5 +49,3 @@ window.addEventListener('keydown', event => {
     closeGallery();
   }
 });
-
- 
