@@ -72,6 +72,17 @@ function Gallery(gallery) {
 }
 const galleryFarn = Gallery(document.querySelector('.galleryFarn'));
 const gallerySalamander = Gallery(document.querySelector('.gallerySalamander'));
+const galleryKK = Gallery(document.querySelector('.galleryKK'));
+const galleryRMR = Gallery(document.querySelector('.galleryRMR'));
+const galleryUlm = Gallery(document.querySelector('.galleryUlm'));
+const galleryIVC = Gallery(document.querySelector('.galleryIVC'));
+const galleryPowerPray = Gallery(document.querySelector('.galleryPowerPray'));
+const galleryYYNKtype = Gallery(document.querySelector('.galleryYYNKtype'));
+const galleryCeciliaTosh = Gallery(document.querySelector('.galleryCeciliaTosh'));
+const gallerySittenstrolch = Gallery(document.querySelector('.gallerySittenstrolch'));
+const galleryAYCE = Gallery(document.querySelector('.galleryAYCE'));
+const gallerySpäti = Gallery(document.querySelector('.gallerySpäti'));
+const galleryEuropa = Gallery(document.querySelector('.galleryEuropa'));
 
 
 
