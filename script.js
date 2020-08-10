@@ -13,7 +13,7 @@ function Gallery(gallery) {
 
   function openModal() {
     console.info('opening modal..');
-    // first check if modal is alread open 
+    // first check if modal is alread open
     if (modal.matches('.open')) {
       console.info('modal already open');
       return;

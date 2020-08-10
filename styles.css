@@ -58,12 +58,12 @@ img {
 ul,
 .navbar {
   list-style: none;
-  font-size: 22px;
+  font-size: 18px;
   font-family: monospace;
   font-style: italic;
   text-align: right;
   color: #0000ff;
-  line-height: 28px;
+  line-height: 23px;
 }
 
 .container {
