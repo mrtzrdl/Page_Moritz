@@ -124,11 +124,12 @@ li:hover {
 }
 
 .click-view-inner {
-  max-width: 65vmin;
+  max-width: 75vmin;
   /* max-height: 80vmin; */
   transition: ease-in-out 5s;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .click-view-inner button {
@@ -138,10 +139,13 @@ li:hover {
   color: white;
   font-weight: bold;
   font-size: 60px;
-  margin: 20px;
 }
 
 .click-view-outer.open .click-view-inner {
   transform: translateY(0);
   transition: none;
+}
+
+button.hideButton {
+  visibility: hidden;
 }
