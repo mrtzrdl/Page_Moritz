@@ -66,6 +66,10 @@ ul,
   line-height: 23px;
 }
 
+li:hover {
+  color: #fc2793;
+}
+
 .container {
   padding-top: 100px;
   z-index: 2;
@@ -123,6 +127,18 @@ ul,
   max-width: 65vmin;
   /* max-height: 80vmin; */
   transition: ease-in-out 5s;
+  display: flex;
+  flex-direction: row;
+}
+
+.click-view-inner button {
+  background: none;
+  width: 50px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  margin: 20px;
 }
 
 .click-view-outer.open .click-view-inner {
