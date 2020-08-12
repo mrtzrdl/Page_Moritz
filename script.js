@@ -38,7 +38,7 @@ function Gallery(gallery) {
 
   function showNextImage() {
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
-    console.log(nextElementSibling);
+    
   }
   function showPrevImage() {
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
@@ -53,15 +53,32 @@ function Gallery(gallery) {
 
 
   function showImage(element) {
+    console.log(element);
     if (!element) {
       console.info('no image to show');
       return;
     }
-    //update modal with this info
-    console.log(element);
-    modal.querySelector('img').src = element.src;
-    currentImage = element;
-    openModal();
+    if(element.classList.contains('singlePic')){
+      console.log('single pic');
+      modal.querySelector('img').src = element.src;
+      console.log(element.src);
+      currentImage = element;
+      openModal();
+      previousButton.classList.add('hideButton');
+      nextButton.classList.add('hideButton');
+      console.log(element);
+      
+    } else {
+      previousButton.classList.remove('hideButton');
+      nextButton.classList.remove('hideButton');
+      //update modal with this info
+      console.log(element);
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
+      openModal();
+    }
+    
+    
   }
 
   //these are the event listeners
@@ -83,6 +100,7 @@ const gallerySittenstrolch = Gallery(document.querySelector('.gallerySittenstrol
 const galleryAYCE = Gallery(document.querySelector('.galleryAYCE'));
 const gallerySpäti = Gallery(document.querySelector('.gallerySpäti'));
 const galleryEuropa = Gallery(document.querySelector('.galleryEuropa'));
+const singlePicGallery = Gallery(document.querySelector('.gallerySinglePic'));
 
 
 
@@ -91,53 +109,52 @@ const galleryEuropa = Gallery(document.querySelector('.galleryEuropa'));
 
 
 
+// // selects elements that we will use for the click Gallery
+// const singlePictureSelection = document.querySelectorAll('.singlePic');
+// const clickViewOuter = document.querySelector('.click-view-outer');
+// const clickViewInner = document.querySelector('.click-view-inner');
 
-// selects elements that we will use for the click Gallery
-const cardItemSelection = document.querySelectorAll('.card');
-const clickViewOuter = document.querySelector('.click-view-outer');
-const clickViewInner = document.querySelector('.click-view-inner');
+// // handle card click event function
+// const handleCardButtonClick = (event) => {
+//   // create variables for event current target and card 
+//   const singlePic = event.currentTarget;
+//   console.log(singlePic);
+//   // grab image src, desc and alt
+//   const imgSrc = singlePic.querySelector('img').src;
+//   // can add a decription in the gallery in the next  line just uncomment below and add <p>${desc}</p> after the img tag below
+//   // const desc = card.dataset.description;
+//   //this line adds the alternate description for screen readers or in case the picture does not load
+//   const name = card.querySelector('h4').textContent;
+//    //populate the modal with the new info
+//   clickViewInner.innerHTML = `
+//     <img  src="${imgSrc}" alt="${name}"/>
+//     `;
+//   clickViewOuter.classList.add('open');
+// }
 
-// handle card click event function
-const handleCardButtonClick = (event) => {
-  // create variables for event current target and card 
-  const card = event.currentTarget;
-  console.log(card);
-  // grab image src, desc and alt
-  const imgSrc = card.querySelector('img').src;
-  // can add a decription in the gallery in the next  line just uncomment below and add <p>${desc}</p> after the img tag below
-  // const desc = card.dataset.description;
-  //this line adds the alternate description for screen readers or in case the picture does not load
-  const name = card.querySelector('h4').textContent;
-   //populate the modal with the new info
-  clickViewInner.innerHTML = `
-    <img  src="${imgSrc}" alt="${name}"/>
-    `;
-  clickViewOuter.classList.add('open');
-}
+// //sets the card to listen for a click by the user
+// singlePictureSelection.forEach(singlePic =>
+//   singlePic.addEventListener('click', handleCardButtonClick)
+//   );
+// console.log(handleCardButtonClick);
 
-//sets the card to listen for a click by the user
-cardItemSelection.forEach(card =>
-  card.addEventListener('click', handleCardButtonClick)
-  );
-console.log(handleCardButtonClick);
+// //function to close click gallery
+// const closeGallery = () => {
+//   clickViewOuter.classList.remove('open');
+// }
+// //sets the 'outside area' to listen for a click to close the gallery
+// clickViewOuter.addEventListener('click', event => {
+//   const isOutside = !event.target.closest('.click-view-inner');
+//   console.log(isOutside);
+//   if (isOutside) {
+//     closeGallery();
+//   }
+// });
 
-//function to close click gallery
-const closeGallery = () => {
-  clickViewOuter.classList.remove('open');
-}
-//sets the 'outside area' to listen for a click to close the gallery
-clickViewOuter.addEventListener('click', event => {
-  const isOutside = !event.target.closest('.click-view-inner');
-  console.log(isOutside);
-  if (isOutside) {
-    closeGallery();
-  }
-});
-
-//sets the 'outside area' to listen for excape key to close the gallery
-window.addEventListener('keydown', event => {
-  console.log(event);
-  if (event.key === 'Escape') {
-    closeGallery();
-  }
-});
+// //sets the 'outside area' to listen for excape key to close the gallery
+// window.addEventListener('keydown', event => {
+//   console.log(event);
+//   if (event.key === 'Escape') {
+//     closeGallery();
+//   }
+// });

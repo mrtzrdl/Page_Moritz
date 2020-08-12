@@ -66,6 +66,10 @@ ul,
   line-height: 23px;
 }
 
+li:hover {
+  color: #fc2793;
+}
+
 .container {
   padding-top: 100px;
   z-index: 2;
@@ -120,12 +124,28 @@ ul,
 }
 
 .click-view-inner {
-  max-width: 65vmin;
+  max-width: 75vmin;
   /* max-height: 80vmin; */
   transition: ease-in-out 5s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.click-view-inner button {
+  background: none;
+  width: 50px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
 }
 
 .click-view-outer.open .click-view-inner {
   transform: translateY(0);
   transition: none;
+}
+
+button.hideButton {
+  visibility: hidden;
 }
