@@ -67,7 +67,6 @@ function Gallery(gallery) {
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
       console.log(element);
-      
     } else {
       previousButton.classList.remove('hideButton');
       nextButton.classList.remove('hideButton');
@@ -77,16 +76,14 @@ function Gallery(gallery) {
       currentImage = element;
       openModal();
     }
-    
-    
   }
 
   //these are the event listeners
   images.forEach(image => image.addEventListener('click', event => showImage(event.currentTarget)));
   modal.addEventListener('click', handleClickOutside);
-
-
 }
+
+
 const galleryFarn = Gallery(document.querySelector('.galleryFarn'));
 const gallerySalamander = Gallery(document.querySelector('.gallerySalamander'));
 const galleryKK = Gallery(document.querySelector('.galleryKK'));
@@ -100,8 +97,22 @@ const gallerySittenstrolch = Gallery(document.querySelector('.gallerySittenstrol
 const galleryAYCE = Gallery(document.querySelector('.galleryAYCE'));
 const gallerySpäti = Gallery(document.querySelector('.gallerySpäti'));
 const galleryEuropa = Gallery(document.querySelector('.galleryEuropa'));
-const singlePicGallery = Gallery(document.querySelector('.gallerySinglePic'));
-
+const singlePicGodzilla = Gallery(document.querySelector('.galleryGodzilla'));
+const singlePicEKL75 = Gallery(document.querySelector('.galleryEKL75'));
+const singlePicMoMoney = Gallery(document.querySelector('.galleryMoMoney'));
+const singlePicEklon = Gallery(document.querySelector('.galleryEklon'));
+const singlePicYumYum = Gallery(document.querySelector('.galleryYumYumPack'));
+const singlePicGraffitiMo = Gallery(document.querySelector('.galleryGraffitiMoritz'));
+const singlePicEKLType = Gallery(document.querySelector('.galleryEKLType'));
+const singlePicGangster = Gallery(document.querySelector('.galleryOGGangster'));
+const singlePicYumYumType = Gallery(document.querySelector('.galleryYumYumType'));
+const singlePicRMR = Gallery(document.querySelector('.galleryRMRIcons'));
+const singlePicEKLMotionKey = Gallery(document.querySelector('.galleryEKLMotionKey'));
+const singlePicMeatGreet = Gallery(document.querySelector('.galleryMeatGreet'));
+const singlePicNewWorld = Gallery(document.querySelector('.galleryNewWorld'));
+const singlePicBurningHouse = Gallery(document.querySelector('.galleryBurningHouse'));
+const singlePicWaterIsLife = Gallery(document.querySelector('.galleryWaterIsLife'));
+const singlePicTetris = Gallery(document.querySelector('.galleryTetris'));
 
 
 
