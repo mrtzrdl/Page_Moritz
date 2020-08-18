@@ -28,6 +28,10 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove('open');
+
+    window.removeEventListener('keyup', handleKeyUp);
+    nextButton.removeEventListener('click', showNextImage);
+    previousButton.removeEventListener('click', showPrevImage);
   }
 
   function handleKeyUp(event) {

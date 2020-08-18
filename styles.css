@@ -112,7 +112,6 @@ li:hover {
   pointer-events: none;
   transition: opacity 0.2s;
 }
-
 .click-view-outer img {
   margin: auto;
   align-content: center;
