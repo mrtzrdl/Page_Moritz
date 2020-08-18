@@ -7,6 +7,7 @@ function Gallery(gallery) {
   //selecte elements we need
   const images = Array.from(gallery.querySelectorAll('img'));
   const modal = document.querySelector('.click-view-outer');
+  const modalInner = document.querySelector('.click-view-inner');
   const previousButton = modal.querySelector('.previous');
   const nextButton = modal.querySelector('.next');
   let currentImage;
@@ -28,10 +29,14 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove('open');
-
+    
     window.removeEventListener('keyup', handleKeyUp);
     nextButton.removeEventListener('click', showNextImage);
     previousButton.removeEventListener('click', showPrevImage);
+    // console.log(widthSelector);
+    const widthSelectorRemove = modalInner.classList[1];
+    modalInner.classList.remove(widthSelectorRemove);
+    console.log(modalInner);
   }
 
   function handleKeyUp(event) {
@@ -58,16 +63,22 @@ function Gallery(gallery) {
 
   function showImage(element) {
     console.log(element);
+    const widthSelector = element.classList[0];
+    modalInner.classList.add(widthSelector);
+    modal.querySelector('img').classList = element.classList;
+    modal.querySelector('img').src = element.src;
+    currentImage = element;
+
     if (!element) {
       console.info('no image to show');
       return;
     }
     if(element.classList.contains('singlePic')){
-      console.log('single pic');
       modal.querySelector('img').src = element.src;
-      console.log(element.src);
+      // console.log(element.classList);
+      console.log(widthSelector);
       currentImage = element;
-      openModal();
+      openModal();   
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
       console.log(element);
@@ -76,8 +87,6 @@ function Gallery(gallery) {
       nextButton.classList.remove('hideButton');
       //update modal with this info
       console.log(element);
-      modal.querySelector('img').src = element.src;
-      currentImage = element;
       openModal();
     }
   }

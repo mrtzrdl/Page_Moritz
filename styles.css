@@ -116,14 +116,19 @@ li:hover {
   margin: auto;
   align-content: center;
 }
-
+.width120 {
+  max-width: 120vmin;
+}
+.width70 {
+  max-width: 70vmin;
+}
 .click-view-outer.open {
   opacity: 1;
   pointer-events: all;
 }
 
 .click-view-inner {
-  max-width: 75vmin;
+  /* max-width: 75vmin; */
   /* max-height: 80vmin; */
   transition: ease-in-out 5s;
   display: flex;
