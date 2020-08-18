@@ -36,7 +36,6 @@ function Gallery(gallery) {
     // console.log(widthSelector);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
-    console.log(modalInner);
   }
 
   function handleKeyUp(event) {
@@ -47,7 +46,7 @@ function Gallery(gallery) {
 
   function showNextImage() {
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
-    
+    console.log(modal);
   }
   function showPrevImage() {
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
@@ -63,30 +62,24 @@ function Gallery(gallery) {
 
   function showImage(element) {
     console.log(element);
-    const widthSelector = element.classList[0];
-    modalInner.classList.add(widthSelector);
-    modal.querySelector('img').classList = element.classList;
-    modal.querySelector('img').src = element.src;
-    currentImage = element;
-
     if (!element) {
       console.info('no image to show');
       return;
     }
+    modal.querySelector('img').classList = element.classList[0];
+    modal.querySelector('img').src = element.src;
+    currentImage = element;
+    const widthSelector = element.classList[0];
+    console.log(element.classList[0]);
+    modalInner.classList.add(widthSelector);
+
     if(element.classList.contains('singlePic')){
-      modal.querySelector('img').src = element.src;
-      // console.log(element.classList);
-      console.log(widthSelector);
-      currentImage = element;
-      openModal();   
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
-      console.log(element);
+      openModal();   
     } else {
       previousButton.classList.remove('hideButton');
       nextButton.classList.remove('hideButton');
-      //update modal with this info
-      console.log(element);
       openModal();
     }
   }
