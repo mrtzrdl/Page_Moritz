@@ -7,9 +7,8 @@ function Gallery(gallery) {
   //selecte elements we need
   const images = Array.from(gallery.querySelectorAll('img'));
   const videos = Array.from(gallery.querySelectorAll('video'));
-  console.log(videos);
   const modal = document.querySelector('.click-view-outer');
-  const modalInner = document.querySelector('.click-view-inner');
+  let modalInner = document.querySelector('.click-view-inner');
   const previousButton = modal.querySelector('.previous');
   const nextButton = modal.querySelector('.next');
   let currentImage;
@@ -31,13 +30,17 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove('open');
-    
     window.removeEventListener('keyup', handleKeyUp);
     nextButton.removeEventListener('click', showNextImage);
     previousButton.removeEventListener('click', showPrevImage);
     // console.log(widthSelector);
+    // modalInner.innerHTML = `
+    //     <img class="click-view-inner" src="" alt="">
+    // `
+    // console.log(modal);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
+
   }
 
   function handleKeyUp(event) {
@@ -69,6 +72,7 @@ function Gallery(gallery) {
     }
     
     const widthSelector = element.classList[0];
+    console.log(widthSelector);
     modalInner.classList.add(widthSelector);
 
     if(element.classList.contains('singlePic')){
@@ -79,25 +83,25 @@ function Gallery(gallery) {
       nextButton.classList.add('hideButton');
       openModal();   
      } 
-    else if(element.classList.contains('video')) {
-      console.log(element.src);
-      //modal.querySelector('video').src = element.src;
-      //add poser querey Selector
-      previousButton.classList.add('hideButton');
-      nextButton.classList.add('hideButton');
-      openModal();
-      console.log(modalInner.innerHTML);
-      modalInner.innerHTML = `
-        <video controls class=${widthSelector} src=${element.src} type="video/mp4"></video>
-
-       `
-    }
+    // else if(element.classList.contains('video')) {
+    //   console.log(element.src);
+    //   console.log(element.poster);
+    //   previousButton.classList.add('hideButton');
+    //   nextButton.classList.add('hideButton');
+    //   openModal();
+    //   console.log(modalInner.innerHTML);
+    //   modalInner.innerHTML = `
+    //     <video controls class=${widthSelector} src=${element.src} poster="${element.poster}" type="video/mp4"></video>
+    //    `
+    // }
     else {
-      modal.querySelector('img').classList = element.classList[0];
-      modal.querySelector('img').src = element.src;
-      currentImage = element;
       previousButton.classList.remove('hideButton');
       nextButton.classList.remove('hideButton');
+      modal.querySelector('img').classList = element.classList[0];
+      console.log(element.classList[0]);
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
+ 
       openModal();
     }
 
