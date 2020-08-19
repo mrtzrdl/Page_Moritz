@@ -38,7 +38,7 @@ function Gallery(gallery) {
 
   function showNextImage() {
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
-    
+    console.log("anyMassage");
   }
   function showPrevImage() {
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
@@ -61,6 +61,8 @@ function Gallery(gallery) {
     if(element.classList.contains('singlePic')){
       console.log('single pic');
       modal.querySelector('img').src = element.src;
+      modal.querySelector('img').width = element.width;
+      console.log(element.width);
       console.log(element.src);
       currentImage = element;
       openModal();
@@ -90,6 +92,7 @@ const galleryKK = Gallery(document.querySelector('.galleryKK'));
 const galleryRMR = Gallery(document.querySelector('.galleryRMR'));
 const galleryUlm = Gallery(document.querySelector('.galleryUlm'));
 const galleryIVC = Gallery(document.querySelector('.galleryIVC'));
+const gallerySemikolon = Gallery(document.querySelector('.gallerySemikolon'));
 const galleryPowerPray = Gallery(document.querySelector('.galleryPowerPray'));
 const galleryYYNKtype = Gallery(document.querySelector('.galleryYYNKtype'));
 const galleryCeciliaTosh = Gallery(document.querySelector('.galleryCeciliaTosh'));
@@ -109,6 +112,7 @@ const singlePicYumYumType = Gallery(document.querySelector('.galleryYumYumType')
 const singlePicRMR = Gallery(document.querySelector('.galleryRMRIcons'));
 const singlePicEKLMotionKey = Gallery(document.querySelector('.galleryEKLMotionKey'));
 const singlePicMeatGreet = Gallery(document.querySelector('.galleryMeatGreet'));
+const singleServe = Gallery(document.querySelector('.galleryServe'));
 const singlePicNewWorld = Gallery(document.querySelector('.galleryNewWorld'));
 const singlePicBurningHouse = Gallery(document.querySelector('.galleryBurningHouse'));
 const singlePicWaterIsLife = Gallery(document.querySelector('.galleryWaterIsLife'));
@@ -127,7 +131,7 @@ const singlePicTetris = Gallery(document.querySelector('.galleryTetris'));
 
 // // handle card click event function
 // const handleCardButtonClick = (event) => {
-//   // create variables for event current target and card 
+//   // create variables for event current target and card
 //   const singlePic = event.currentTarget;
 //   console.log(singlePic);
 //   // grab image src, desc and alt
