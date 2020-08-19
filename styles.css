@@ -11,6 +11,7 @@ body {
   background-color: white;
   cursor: url(src/cursor.png), auto;
 }
+a:hover, button:hover {cursor: url(src/cursor_rollover.png), auto;}
 img,
 video {
   width: 100%;
