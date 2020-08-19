@@ -121,6 +121,9 @@ li:hover {
 .width120 {
   max-width: 120vmin;
 }
+.width40 {
+  max-width: 40vmin;
+}
 .width60 {
   max-width: 60vmin;
 }

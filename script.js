@@ -6,6 +6,8 @@ function Gallery(gallery) {
   }
   //selecte elements we need
   const images = Array.from(gallery.querySelectorAll('img'));
+  const videos = Array.from(gallery.querySelectorAll('video'));
+  console.log(videos);
   const modal = document.querySelector('.click-view-outer');
   const modalInner = document.querySelector('.click-view-inner');
   const previousButton = modal.querySelector('.previous');
@@ -46,7 +48,6 @@ function Gallery(gallery) {
 
   function showNextImage() {
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
-    console.log(modal);
   }
   function showPrevImage() {
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
@@ -61,31 +62,71 @@ function Gallery(gallery) {
 
 
   function showImage(element) {
-    console.log(element);
+    
     if (!element) {
       console.info('no image to show');
       return;
     }
-    modal.querySelector('img').classList = element.classList[0];
-    modal.querySelector('img').src = element.src;
-    currentImage = element;
+    
     const widthSelector = element.classList[0];
-    console.log(element.classList[0]);
     modalInner.classList.add(widthSelector);
 
     if(element.classList.contains('singlePic')){
+      modal.querySelector('img').classList = element.classList[0];
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
       openModal();   
-    } else {
+     } 
+    else if(element.classList.contains('video')) {
+      console.log(element.src);
+      //modal.querySelector('video').src = element.src;
+      //add poser querey Selector
+      previousButton.classList.add('hideButton');
+      nextButton.classList.add('hideButton');
+      openModal();
+      console.log(modalInner.innerHTML);
+      modalInner.innerHTML = `
+        <video controls class=${widthSelector} src=${element.src} type="video/mp4"></video>
+
+       `
+    }
+    else {
+      modal.querySelector('img').classList = element.classList[0];
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
       previousButton.classList.remove('hideButton');
       nextButton.classList.remove('hideButton');
       openModal();
     }
+
+    // function showVideo(element) {
+    //   modal.querySelector('img').src = element.src;
+    //   currentImage = element;
+    //   console.log(modal.querySelector('img').src);
+    //   modal.querySelector('img').classList = element.classList[0];
+    //   const widthSelector = element.classList[0];
+    //   console.log(element.classList[0]);
+    //   modalInner.classList.add(widthSelector);
+    //   if(!element) {
+    //     console.info('no video to show');
+    //     return;
+    //   }
+      
+    //   else {
+    //     previousButton.classList.add('hideButton');
+    //     nextButton.classList.add('hideButton');
+    //     openModal();
+    //   }
+    // }
+    
   }
 
   //these are the event listeners
   images.forEach(image => image.addEventListener('click', event => showImage(event.currentTarget)));
+  videos.forEach(video => video.addEventListener('click', event => showImage(event.currentTarget)));
+  
   modal.addEventListener('click', handleClickOutside);
 }
 
