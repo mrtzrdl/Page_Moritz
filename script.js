@@ -6,7 +6,10 @@ function Gallery(gallery) {
   }
   //selecte elements we need
   const images = Array.from(gallery.querySelectorAll('img'));
+  const videos = Array.from(gallery.querySelectorAll('video'));
+  console.log(videos);
   const modal = document.querySelector('.click-view-outer');
+  const modalInner = document.querySelector('.click-view-inner');
   const previousButton = modal.querySelector('.previous');
   const nextButton = modal.querySelector('.next');
   let currentImage;
@@ -28,6 +31,13 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove('open');
+
+    window.removeEventListener('keyup', handleKeyUp);
+    nextButton.removeEventListener('click', showNextImage);
+    previousButton.removeEventListener('click', showPrevImage);
+    // console.log(widthSelector);
+    const widthSelectorRemove = modalInner.classList[1];
+    modalInner.classList.remove(widthSelectorRemove);
   }
 
   function handleKeyUp(event) {
@@ -53,35 +63,71 @@ function Gallery(gallery) {
 
 
   function showImage(element) {
-    console.log(element);
+
     if (!element) {
       console.info('no image to show');
       return;
     }
+
+    const widthSelector = element.classList[0];
+    modalInner.classList.add(widthSelector);
+
     if(element.classList.contains('singlePic')){
-      console.log('single pic');
+      modal.querySelector('img').classList = element.classList[0];
       modal.querySelector('img').src = element.src;
-      modal.querySelector('img').width = element.width;
-      console.log(element.width);
-      console.log(element.src);
       currentImage = element;
-      openModal();
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
-      console.log(element);
-    } else {
-      previousButton.classList.remove('hideButton');
-      nextButton.classList.remove('hideButton');
-      //update modal with this info
-      console.log(element);
+      openModal();
+     }
+    else if(element.classList.contains('video')) {
+      console.log(element.src);
+      //modal.querySelector('video').src = element.src;
+      //add poser querey Selector
+      previousButton.classList.add('hideButton');
+      nextButton.classList.add('hideButton');
+      openModal();
+      console.log(modalInner.innerHTML);
+      modalInner.innerHTML = `
+        <video controls class=${widthSelector} src=${element.src} type="video/mp4"></video>
+
+       `
+    }
+    else {
+      modal.querySelector('img').classList = element.classList[0];
       modal.querySelector('img').src = element.src;
       currentImage = element;
+      previousButton.classList.remove('hideButton');
+      nextButton.classList.remove('hideButton');
       openModal();
     }
+
+    // function showVideo(element) {
+    //   modal.querySelector('img').src = element.src;
+    //   currentImage = element;
+    //   console.log(modal.querySelector('img').src);
+    //   modal.querySelector('img').classList = element.classList[0];
+    //   const widthSelector = element.classList[0];
+    //   console.log(element.classList[0]);
+    //   modalInner.classList.add(widthSelector);
+    //   if(!element) {
+    //     console.info('no video to show');
+    //     return;
+    //   }
+
+    //   else {
+    //     previousButton.classList.add('hideButton');
+    //     nextButton.classList.add('hideButton');
+    //     openModal();
+    //   }
+    // }
+
   }
 
   //these are the event listeners
   images.forEach(image => image.addEventListener('click', event => showImage(event.currentTarget)));
+  videos.forEach(video => video.addEventListener('click', event => showImage(event.currentTarget)));
+
   modal.addEventListener('click', handleClickOutside);
 }
 
