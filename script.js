@@ -78,7 +78,7 @@ function Gallery(gallery) {
 
     if(element.classList.contains('singlePic')){
       modal.querySelector('img').classList = element.classList[0];
-      pmodal.querySelector('img').src = element.src;
+      modal.querySelector('img').src = element.src;
       currentImage = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');

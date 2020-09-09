@@ -11,14 +11,18 @@ body {
   background-color: white;
   cursor: url(src/cursor.png), auto;
 }
-a:hover, button:hover {cursor: url(src/cursor_rollover.png), auto;}
+a:hover,
+button:hover {
+  cursor: url(src/cursor_rollover.png), auto;
+}
 img,
 video {
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
 .card img:hover,
-video:hover { cursor: url(src/cursor_rollover.png), auto;
+video:hover {
+  cursor: url(src/cursor_rollover.png), auto;
   transform: scale(1.03);
 }
 .logo {
@@ -107,7 +111,7 @@ li:hover {
   font-size: 18px;
   color: rgb(0, 0, 255);
 }
- /* .alignleft {
+/* .alignleft {
   float: left;
 }
 .alignright {
@@ -143,6 +147,9 @@ li:hover {
 }
 .width60 {
   max-width: 60vmin;
+}
+.width65 {
+  max-width: 65vmin;
 }
 .width70 {
   max-width: 70vmin;
@@ -189,9 +196,16 @@ li:hover {
   background: none;
   width: 50px;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255, 0.8);
   font-weight: bold;
   font-size: 60px;
+}
+button:hover {
+  color: rgb(255, 255, 255);
+}
+button:focus {
+  border: none;
+  outline: none;
 }
 
 .click-view-outer.open .click-view-inner {
