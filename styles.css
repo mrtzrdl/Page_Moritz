@@ -23,7 +23,7 @@ video {
 .card img:hover,
 video:hover {
   cursor: url(src/cursor_rollover.png), auto;
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 .logo {
   z-index: 10;
@@ -186,12 +186,14 @@ li:hover {
 .click-view-inner {
   /* max-width: 75vmin; */
   /* max-height: 80vmin; */
-  transition: ease-in-out 5s;
+  transition: all 0.4s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-
+.click-view-inner img {
+  transition: none;
+}
 .click-view-inner button {
   background: none;
   width: 50px;
@@ -209,10 +211,25 @@ button:focus {
 }
 
 .click-view-outer.open .click-view-inner {
-  transform: translateY(0);
+  /* transform: translateY(0); */
   transition: none;
 }
 
 button.hideButton {
   visibility: hidden;
+}
+
+#contact {
+  position: relative;
+}
+a.instaHandle {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+
+a.email {
+  position: absolute;
+  top: 70%;
+  right: 15%;
 }
