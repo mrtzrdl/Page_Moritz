@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  background-color: white;
+  background-color: rgb(255,255,255);
   cursor: url(src/cursor.png), auto;
 }
 a:hover,
