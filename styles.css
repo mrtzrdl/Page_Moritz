@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   cursor: url(src/cursor.png), auto;
 }
 a:hover,
@@ -110,6 +110,10 @@ li:hover {
   line-height: 22px;
   font-size: 18px;
   color: rgb(0, 0, 255);
+}
+
+div.gallery {
+  margin: auto;
 }
 /* .alignleft {
   float: left;
