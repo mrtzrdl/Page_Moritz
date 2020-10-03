@@ -5,10 +5,11 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   cursor: url(src/cursor.png), auto;
 }
 a:hover,
@@ -111,6 +112,10 @@ li:hover {
   font-size: 18px;
   color: rgb(0, 0, 255);
 }
+
+div.gallery {
+  margin: auto;
+}
 /* .alignleft {
   float: left;
 }
@@ -195,16 +200,22 @@ li:hover {
   transition: none;
 }
 .click-view-inner button {
-  background: none;
-  width: 50px;
   border: none;
-  color: rgb(255, 255, 255, 0.8);
-  font-weight: bold;
-  font-size: 60px;
+  color: rgb(255, 255, 255, 0);
+
+  margin-top: 30%;
+  margin-bottom: 30%;
 }
-button:hover {
-  color: rgb(255, 255, 255);
+
+.click-view-inner button.previous {
+  background: center no-repeat url(src/gallery_arrow_left.png);
+  background-size: contain;
 }
+.click-view-inner button.next {
+  background: center no-repeat url(src/gallery_arrow_right.png);
+  background-size: contain;
+}
+
 button:focus {
   border: none;
   outline: none;
