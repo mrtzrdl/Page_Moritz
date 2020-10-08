@@ -89,6 +89,7 @@ function Gallery(gallery) {
       modalImage.classList.add('hideImage');
       modal.querySelector('video').classList = element.classList[0];
       modal.querySelector('video').src = element.src;
+      modal.querySelector('video').poster = element.poster;
       currentVideo = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');

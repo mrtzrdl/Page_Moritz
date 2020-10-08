@@ -150,6 +150,9 @@ div.gallery {
 .width50 {
   max-width: 50vmin;
 }
+.width55 {
+  max-width: 55vmin;
+}
 .width60 {
   max-width: 60vmin;
 }
@@ -199,6 +202,9 @@ div.gallery {
 .click-view-inner img {
   transition: none;
 }
+.click-view-inner video {
+  transition: none;
+}
 .click-view-inner button {
   border: none;
   color: rgb(255, 255, 255, 0);
@@ -244,18 +250,26 @@ video.hideVideo {
   color: rgb(0, 0, 255);
   position: relative;
 }
+
+.contactGif {
+  object-fit: contain;
+  width: 100%;
+}
+
 a.instaHandle {
   position: absolute;
   opacity: 0;
   font-family: "Work Sans", sans-serif;
-  top: 30%;
-  right: 20%;
+  top: 25%;
+  right: 10%;
+  font-size: 50px;
 }
 
 a.email {
   position: absolute;
   opacity: 0;
   font-family: "Work Sans", sans-serif;
-  top: 64%;
-  left: 18%;
+  top: 60%;
+  left: 3%;
+  font-size: 46px;
 }
