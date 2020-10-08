@@ -103,6 +103,7 @@ function Gallery(gallery) {
       //console.log(element.classList[0]);
       modal.querySelector('img').src = element.src;
       currentImage = element;
+      console.log(currentImage);
       modalVideo.classList.add('hideVideo');
       openModal();
     }

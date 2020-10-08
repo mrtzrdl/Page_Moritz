@@ -235,7 +235,7 @@ video.hideVideo {
   position: absolute;
 }
 
-image.hideImage {
+.hideImage {
   visibility: hidden;
   position: absolute;
 }
