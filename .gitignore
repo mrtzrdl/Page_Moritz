@@ -1,3 +1,6 @@
 script copy.js
 debug.log
 todo
+node_modules/
+package-lock.json
+package.json

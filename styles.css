@@ -230,6 +230,16 @@ button.hideButton {
   visibility: hidden;
 }
 
+video.hideVideo {
+  visibility: hidden;
+  position: absolute;
+}
+
+image.hideImage {
+  visibility: hidden;
+  position: absolute;
+}
+
 #contact {
   position: relative;
 }
