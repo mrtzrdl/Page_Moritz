@@ -14,6 +14,7 @@ body {
 }
 a:hover,
 button:hover {
+  color: rgb(255, 0, 0);
   cursor: url(src/cursor_rollover.png), auto;
 }
 img,
@@ -67,15 +68,14 @@ ul,
 .navbar {
   list-style: none;
   font-size: 18px;
-  font-family: monospace;
+  font-family: "Work Sans", sans-serif; /* monospace; */
   font-style: italic;
   text-align: right;
-  color: #0000ff;
   line-height: 23px;
 }
 
 li:hover {
-  color: #fc2793;
+  color: #0000FF;
 }
 
 .container {
@@ -231,16 +231,21 @@ button.hideButton {
 }
 
 #contact {
+  color: rgb(0, 0, 255);
   position: relative;
 }
 a.instaHandle {
   position: absolute;
+  opacity: 0;
+  font-family: "Work Sans", sans-serif;
   top: 30%;
-  left: 15%;
+  right: 20%;
 }
 
 a.email {
   position: absolute;
-  top: 70%;
-  right: 15%;
+  opacity: 0;
+  font-family: "Work Sans", sans-serif;
+  top: 64%;
+  left: 18%;
 }
