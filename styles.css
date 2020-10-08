@@ -17,8 +17,8 @@ button:hover {
   color: rgb(255, 0, 0);
   cursor: url(src/cursor_rollover.png), auto;
 }
-img,
-video {
+.card img,
+.card video {
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
@@ -75,7 +75,7 @@ ul,
 }
 
 li:hover {
-  color: #0000FF;
+  color: #0000ff;
 }
 
 .container {
@@ -191,7 +191,7 @@ div.gallery {
 .click-view-inner {
   /* max-width: 75vmin; */
   /* max-height: 80vmin; */
-  transition: all 0.4s ease-in-out;
+  /* transition: all 0.4s ease-in-out; */
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

@@ -86,13 +86,14 @@ function Gallery(gallery) {
       openModal();
      }
     else if(element.classList.contains('video')) {
+      modalImage.classList.add('hideImage');
       modal.querySelector('video').classList = element.classList[0];
       modal.querySelector('video').src = element.src;
       currentVideo = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
       console.log(modalImage);
-      modalImage.classList.add('hideImage');
+     
       openModal();
       
     }
