@@ -44,7 +44,6 @@ video:hover {
 .logo_outline {
   width: 55vmin;
   position: absolute;
-  /* z-index: 3; */
 }
 
 @media (max-width: 500px) {
@@ -116,11 +115,6 @@ li:hover {
 div.gallery {
   margin: auto;
 }
-/* .alignleft {
-  float: left;
-}
-.alignright {
-  text-align: right; */
 
 .hiddenGallery {
   visibility: hidden;
@@ -192,19 +186,15 @@ div.gallery {
 }
 
 .click-view-inner {
-  /* max-width: 75vmin; */
-  /* max-height: 80vmin; */
-  /* transition: all 0.4s ease-in-out; */
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.click-view-inner img {
+.click-view-inner img,
+.click-view-inner video:hover {
   transition: none;
 }
-.click-view-inner video {
-  transition: none;
-}
+
 .click-view-inner button {
   border: none;
   color: rgb(255, 255, 255, 0);
@@ -228,7 +218,6 @@ button:focus {
 }
 
 .click-view-outer.open .click-view-inner {
-  /* transform: translateY(0); */
   transition: none;
 }
 

@@ -1,4 +1,3 @@
-console.log("it works");
 
 function Gallery(gallery) {
   if (!gallery) {
@@ -14,12 +13,8 @@ function Gallery(gallery) {
   const modalVideo = modal.querySelector('video');
   const modalImage = modal.querySelector('img');
   let currentImage;
-  let currentVideo;
 
   function openModal() {
-    console.info('opening modal..');
-    console.log(modal);
-    console.log(nextButton);
     // first check if modal is alread open
     if (modal.matches('.open')) {
       console.info('modal already open');
@@ -33,14 +28,12 @@ function Gallery(gallery) {
   }
 
   function closeModal() {
-    console.log(modalInner);
     modal.classList.remove('open');
     window.removeEventListener('keyup', handleKeyUp);
     nextButton.removeEventListener('click', showNextImage);
     previousButton.removeEventListener('click', showPrevImage);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
-    
   }
 
   function handleKeyUp(event) {
@@ -50,7 +43,6 @@ function Gallery(gallery) {
   }
 
   function showNextImage() {
-    console.log("next button funciton called");
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
     
   }
@@ -62,13 +54,10 @@ function Gallery(gallery) {
     if (event.target === event.currentTarget) {
       closeModal();
     }
-
   }
-
 
   function showImage(element) {
     const widthSelector = element.classList[0];
-    console.log(widthSelector);
     modalInner.classList.add(widthSelector);
 
     if (!element) {
@@ -82,7 +71,6 @@ function Gallery(gallery) {
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
       modalVideo.classList.add('hideVideo');
-
       openModal();
      }
     else if(element.classList.contains('video')) {
@@ -93,30 +81,22 @@ function Gallery(gallery) {
       currentVideo = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
-      console.log(modalImage);
-     
       openModal();
-      
     }
     else {
       previousButton.classList.remove('hideButton');
       nextButton.classList.remove('hideButton');
       modal.querySelector('img').classList = element.classList[0];
-      //console.log(element.classList[0]);
       modal.querySelector('img').src = element.src;
       currentImage = element;
-      console.log(currentImage);
       modalVideo.classList.add('hideVideo');
       openModal();
     }
-
-
   }
 
   //these are the event listeners
   images.forEach(image => image.addEventListener('click', event => showImage(event.currentTarget)));
   videos.forEach(video => video.addEventListener('click', event => showImage(event.currentTarget)));
-
   modal.addEventListener('click', handleClickOutside);
 }
 
