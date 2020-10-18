@@ -12,6 +12,7 @@ function Gallery(gallery) {
   const nextButton = modal.querySelector('.next');
   const modalVideo = modal.querySelector('video');
   const modalImage = modal.querySelector('img');
+  const flipIcon = modal.querySelector('span');
   let currentImage;
 
   function openModal() {
@@ -34,6 +35,7 @@ function Gallery(gallery) {
     previousButton.removeEventListener('click', showPrevImage);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
+    flipIcon.classList.add('hideFlipIcon');
   }
 
   function handleKeyUp(event) {
@@ -64,7 +66,17 @@ function Gallery(gallery) {
       console.info('no image to show');
       return;
     }
-    if(element.classList.contains('singlePic')){
+    if (element.classList.contains('singlePic') && element.classList.contains('flip')){
+      modal.querySelector('img').classList = element.classList[0];
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
+      previousButton.classList.add('hideButton');
+      nextButton.classList.add('hideButton');
+      modalVideo.classList.add('hideVideo');
+      flipIcon.classList.remove('hideFlipIcon');
+      openModal();
+     }
+    else if (element.classList.contains('singlePic')) {
       modal.querySelector('img').classList = element.classList[0];
       modal.querySelector('img').src = element.src;
       currentImage = element;
@@ -72,7 +84,7 @@ function Gallery(gallery) {
       nextButton.classList.add('hideButton');
       modalVideo.classList.add('hideVideo');
       openModal();
-     }
+    }
     else if(element.classList.contains('video')) {
       modalImage.classList.add('hideImage');
       modal.querySelector('video').classList = element.classList[0];
@@ -81,6 +93,16 @@ function Gallery(gallery) {
       currentVideo = element;
       previousButton.classList.add('hideButton');
       nextButton.classList.add('hideButton');
+      openModal();
+    }
+    else if (element.classList.contains('flip') && !element.classList.contains('singlePic')) {
+      previousButton.classList.remove('hideButton');
+      nextButton.classList.remove('hideButton');
+      modal.querySelector('img').classList = element.classList[0];
+      modal.querySelector('img').src = element.src;
+      currentImage = element;
+      modalVideo.classList.add('hideVideo');
+      flipIcon.classList.remove('hideFlipIcon');
       openModal();
     }
     else {
