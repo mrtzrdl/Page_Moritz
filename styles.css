@@ -184,7 +184,11 @@ div.gallery {
 @media (max-width: 500px) {
   .width65,
   .width70,
-  .width90 {
+  .width90,
+  .width100,
+  .width120,
+  .width110,
+  .width130 {
     max-width: 80vmin;
   }
 }
@@ -248,7 +252,7 @@ video.hideVideo {
   position: absolute;
 }
 
-.material-icons {
+/* .material-icons {
   color: rgb(0, 0, 255);
   position: absolute;
   font-size: 20px;
@@ -256,13 +260,13 @@ video.hideVideo {
 }
 .hideFlipIcon {
   visibility: hidden;
-}
-
+} */
+/* 
 @media screen and (orientation: landscape) {
   .material-icons {
     visibility: hidden;
   }
-}
+} */
 
 #contact {
   color: rgb(0, 0, 255);
