@@ -101,8 +101,7 @@ function Gallery(gallery) {
   videos.forEach(video => video.addEventListener('click', event => showImage(event.currentTarget)));
   modal.addEventListener('click', handleClickOutside);
 
-  //add event pointer event listeners
-  modalInner.addEventListener('touchstart', handleTouchStart, true);
+
 }
 
 
