@@ -44,7 +44,7 @@ function Gallery(gallery) {
 
   function showNextImage() {
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
-    
+
   }
   function showPrevImage() {
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
@@ -132,8 +132,3 @@ const singlePicNewWorld = Gallery(document.querySelector('.galleryNewWorld'));
 const singlePicBurningHouse = Gallery(document.querySelector('.galleryBurningHouse'));
 const singlePicWaterIsLife = Gallery(document.querySelector('.galleryWaterIsLife'));
 const singlePicTetris = Gallery(document.querySelector('.galleryTetris'));
-
-
-
-
-
