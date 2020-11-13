@@ -68,6 +68,7 @@ ul,
   list-style: none;
   font-size: 18px;
   font-family: "Work Sans", sans-serif; /* monospace; */
+  font-weight: 800;
   font-style: italic;
   text-align: right;
   line-height: 23px;
@@ -89,6 +90,7 @@ li:hover {
 
 .card p.designCat {
   font-family: "Work Sans", sans-serif;
+  font-weight: 800;
   font-style: normal;
   padding-top: 10px;
   margin-bottom: 1px;
@@ -261,7 +263,7 @@ video.hideVideo {
 .hideFlipIcon {
   visibility: hidden;
 } */
-/* 
+/*
 @media screen and (orientation: landscape) {
   .material-icons {
     visibility: hidden;
@@ -294,4 +296,37 @@ a.email {
   top: 60%;
   left: 3%;
   font-size: 46px;
+}
+.logoImpressum {
+  position: absolute;
+}
+.logoImpressumSize {
+  width: 26vmin;
+  position: fixed;
+}
+.impressum {
+  display: flex;
+  justify-content: center;
+  font-family: "Work Sans", sans-serif;
+  font-size: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+.impressumLayout {
+  font-family: "Work Sans", sans-serif;
+  color: rgb(0, 0, 255);
+  font-size: 12px;
+  font-weight:500;
+  padding-left: 200px;
+  padding-right: 300px;
+  padding-bottom: 100px;
+}
+@media (max-width: 500px) {
+  .impressumLayout {
+    padding-left: 30px;
+    padding-right: 5px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
+  }
 }

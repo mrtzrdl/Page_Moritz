@@ -34,7 +34,7 @@ function Gallery(gallery) {
     previousButton.removeEventListener('click', showPrevImage);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
-    
+
   }
 
   function handleKeyUp(event) {
@@ -44,7 +44,7 @@ function Gallery(gallery) {
   }
 
   function showNextImage() {
-    showImage(currentImage.nextElementSibling || gallery.firstElementChild); 
+    showImage(currentImage.nextElementSibling || gallery.firstElementChild);
   }
 
   function showPrevImage() {
@@ -134,8 +134,3 @@ const singlePicNewWorld = Gallery(document.querySelector('.galleryNewWorld'));
 const singlePicBurningHouse = Gallery(document.querySelector('.galleryBurningHouse'));
 const singlePicWaterIsLife = Gallery(document.querySelector('.galleryWaterIsLife'));
 const singlePicTetris = Gallery(document.querySelector('.galleryTetris'));
-
-
-
-
-
