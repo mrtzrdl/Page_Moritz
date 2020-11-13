@@ -153,6 +153,7 @@ div.gallery {
 .width65 {
   max-width: 65vmin;
 }
+
 .width70 {
   max-width: 70vmin;
 }
@@ -177,8 +178,19 @@ div.gallery {
 .width140 {
   max-width: 140vmin;
 }
-.width10 {
+.width150 {
   max-width: 150vmin;
+}
+@media (max-width: 500px) {
+  .width65,
+  .width70,
+  .width90,
+  .width100,
+  .width120,
+  .width110,
+  .width130 {
+    max-width: 80vmin;
+  }
 }
 .click-view-outer.open {
   opacity: 1;
@@ -201,6 +213,11 @@ div.gallery {
 
   margin-top: 30%;
   margin-bottom: 30%;
+}
+@media (max-width: 500px) {
+  .click-view-inner button {
+    width: 15%;
+  }
 }
 
 .click-view-inner button.previous {
@@ -234,6 +251,22 @@ video.hideVideo {
   visibility: hidden;
   position: absolute;
 }
+
+/* .material-icons {
+  color: rgb(0, 0, 255);
+  position: absolute;
+  font-size: 20px;
+  right: 0%;
+}
+.hideFlipIcon {
+  visibility: hidden;
+} */
+/* 
+@media screen and (orientation: landscape) {
+  .material-icons {
+    visibility: hidden;
+  }
+} */
 
 #contact {
   color: rgb(0, 0, 255);
