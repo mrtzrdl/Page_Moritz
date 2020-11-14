@@ -1,8 +1,8 @@
 
 function Gallery(gallery) {
-  if (!gallery) {
-    throw new Error('No gallery found');
-  }
+  // if (!gallery) {
+  //   throw new Error('No gallery found');
+  // }
   //selecte elements we need
   const images = Array.from(gallery.querySelectorAll('img'));
   const videos = Array.from(gallery.querySelectorAll('video'));
@@ -115,7 +115,7 @@ const galleryYYNKtype = Gallery(document.querySelector('.galleryYYNKtype'));
 const galleryCeciliaTosh = Gallery(document.querySelector('.galleryCeciliaTosh'));
 const gallerySittenstrolch = Gallery(document.querySelector('.gallerySittenstrolch'));
 const galleryAYCE = Gallery(document.querySelector('.galleryAYCE'));
-const gallerySpäti = Gallery(document.querySelector('.gallerySpäti'));
+const gallerySpäti = Gallery(document.querySelector('.gallerySpaeti'));
 const galleryEuropa = Gallery(document.querySelector('.galleryEuropa'));
 const singlePicGodzilla = Gallery(document.querySelector('.galleryGodzilla'));
 const singlePicEKL75 = Gallery(document.querySelector('.galleryEKL75'));
