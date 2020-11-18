@@ -34,6 +34,7 @@ function Gallery(gallery) {
     previousButton.removeEventListener('click', showPrevImage);
     const widthSelectorRemove = modalInner.classList[1];
     modalInner.classList.remove(widthSelectorRemove);
+    modalVideo.pause();
 
   }
 
