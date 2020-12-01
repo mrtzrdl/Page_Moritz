@@ -4,4 +4,12 @@ todo
 node_modules/
 package-lock.json
 package.json
-Button todo/
+Pages_Sketches/
+src/
+
+
+#JPEG
+.jpg
+
+#videos
+.mp4
